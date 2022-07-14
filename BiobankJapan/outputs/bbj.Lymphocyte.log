@@ -1,0 +1,41 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 sumstats/eas.Lymphocyte.sumstats.gz \
+--ref-ld-chr Full_MELD_/R2_0.52/MELD.win_100.@ \
+--out EAS.Lymphocyte \
+--w-ld-chr Full_LD_/R2_0.52/LD.win_100.@ \
+--print-coefficients  
+
+Beginning analysis at Tue Jun 14 13:43:41 2022
+Reading summary statistics from sumstats/eas.Lymphocyte.sumstats.gz ...
+Read summary statistics for 4924561 SNPs.
+Reading reference panel LD Score from Full_MELD_/R2_0.52/MELD.win_100.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1164666 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from Full_LD_/R2_0.52/LD.win_100.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1164666 SNPs.
+After merging with reference panel LD, 408009 SNPs remain.
+After merging with regression SNP LD, 408009 SNPs remain.
+Removed 1 SNPs with chi^2 > 80 (408008 SNPs remain)
+Total Observed scale h2: 0.0497 (0.0134)
+Categories: l2R2_0.52_0 meldR2_0.52_0
+Observed scale h2: 0.0509 -0.0012
+Observed scale h2 SE: 0.0109 0.0054
+Proportion of SNPs: 0.5 0.5
+Proportion of h2g: 1.0233 -0.0233
+Enrichment: 2.0467 -0.0467
+Coefficients: 1.7681e-07 -4.0314e-09
+Coefficient SE: 3.7927e-08 1.8781e-08
+Lambda GC: 1.0772
+Mean Chi^2: 1.0972
+Intercept: 1.0483 (0.0099)
+Ratio: 0.4967 (0.102)
+Analysis finished at Tue Jun 14 13:43:56 2022
+Total time elapsed: 15.19s

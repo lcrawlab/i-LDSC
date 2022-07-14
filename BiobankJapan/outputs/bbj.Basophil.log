@@ -1,0 +1,41 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 sumstats/eas.Basophil.sumstats.gz \
+--ref-ld-chr Full_MELD_/R2_0.13/MELD.win_100.@ \
+--out EAS.Basophil \
+--w-ld-chr Full_LD_/R2_0.13/LD.win_100.@ \
+--print-coefficients  
+
+Beginning analysis at Tue Jun 14 13:44:37 2022
+Reading summary statistics from sumstats/eas.Basophil.sumstats.gz ...
+Read summary statistics for 4924561 SNPs.
+Reading reference panel LD Score from Full_MELD_/R2_0.13/MELD.win_100.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1164666 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from Full_LD_/R2_0.13/LD.win_100.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1164666 SNPs.
+After merging with reference panel LD, 408009 SNPs remain.
+After merging with regression SNP LD, 408009 SNPs remain.
+Removed 14 SNPs with chi^2 > 80 (407995 SNPs remain)
+Total Observed scale h2: 0.0503 (0.0119)
+Categories: l2R2_0.13_0 meldR2_0.13_0
+Observed scale h2: 0.0541 -0.0038
+Observed scale h2 SE: 0.0112 0.0036
+Proportion of SNPs: 0.5 0.5
+Proportion of h2g: 1.0747 -0.0747
+Enrichment: 2.1495 -0.1495
+Coefficients: 2.9357e-07 -2.0416e-08
+Coefficient SE: 6.0825e-08 1.9724e-08
+Lambda GC: 1.0864
+Mean Chi^2: 1.1183
+Intercept: 1.0755 (0.0095)
+Ratio: 0.6383 (0.0801)
+Analysis finished at Tue Jun 14 13:44:52 2022
+Total time elapsed: 14.84s

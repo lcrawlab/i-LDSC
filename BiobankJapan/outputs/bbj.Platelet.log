@@ -1,0 +1,41 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 sumstats/eas.Platelet.sumstats.gz \
+--ref-ld-chr Full_MELD_/R2_0.19/MELD.win_100.@ \
+--out EAS.Platelet \
+--w-ld-chr Full_LD_/R2_0.19/LD.win_100.@ \
+--print-coefficients  
+
+Beginning analysis at Tue Jun 14 13:42:54 2022
+Reading summary statistics from sumstats/eas.Platelet.sumstats.gz ...
+Read summary statistics for 4924561 SNPs.
+Reading reference panel LD Score from Full_MELD_/R2_0.19/MELD.win_100.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1164666 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from Full_LD_/R2_0.19/LD.win_100.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1164666 SNPs.
+After merging with reference panel LD, 408009 SNPs remain.
+After merging with regression SNP LD, 408009 SNPs remain.
+Removed 53 SNPs with chi^2 > 108.208 (407956 SNPs remain)
+Total Observed scale h2: 0.0886 (0.013)
+Categories: l2R2_0.19_0 meldR2_0.19_0
+Observed scale h2: 0.0922 -0.0037
+Observed scale h2 SE: 0.0122 0.0032
+Proportion of SNPs: 0.5 0.5
+Proportion of h2g: 1.0413 -0.0413
+Enrichment: 2.0825 -0.0825
+Coefficients: 4.6844e-07 -1.8563e-08
+Coefficient SE: 6.1917e-08 1.6226e-08
+Lambda GC: 1.1555
+Mean Chi^2: 1.2575
+Intercept: 1.1248 (0.0153)
+Ratio: 0.4847 (0.0593)
+Analysis finished at Tue Jun 14 13:43:09 2022
+Total time elapsed: 15.33s

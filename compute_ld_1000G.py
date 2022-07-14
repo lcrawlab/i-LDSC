@@ -1,6 +1,12 @@
 """
+<<<<<<< HEAD
+Implements fast calculation of MELD scores
+Gregory Darnell and Samuel Pattillo Smith
+Extended from initial script written by Shadi Zabad, April 2020
+=======
 Author: Shadi Zabad
 Date: April 2020
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
 """
 
 import numpy as np
@@ -178,8 +184,13 @@ def compute_modified_ld_score(j, max_cm_dist=1.):
                 np.dot((neighb_snps_annot * (var_xk.reshape(-1, 1) ** (1. - lds['alpha']))).T,
                        uncr_r2)
             )
+<<<<<<< HEAD
+        # else:
+        #     raise Exception(f"LD estimator {lds['estimator']} not implemented!")
+=======
         else:
             raise Exception(f"LD estimator {lds['estimator']} not implemented!")
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
 
     return j, scores
 
@@ -202,7 +213,10 @@ def compute_modified_meld_score(j, win_size, max_cm_dist=1.):
     
 
     neighb_snps_idx = neighb_snps.index.values
+<<<<<<< HEAD
+=======
     print(neighb_snps_idx)
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
 
     var_xk = neighb_snps['VAR'].values
     var_xj = gt_meta.iloc[j, ]['VAR']
@@ -273,8 +287,13 @@ def compute_modified_meld_score(j, win_size, max_cm_dist=1.):
                 np.dot((neighb_snps_annot * (var_xk.reshape(-1, 1) ** (1. - lds['alpha']))).T,
                        uncr_r2)
             )
+<<<<<<< HEAD
+        # else:
+        #     raise Exception(f"LD estimator {lds['estimator']} not implemented!")
+=======
         else:
             raise Exception(f"LD estimator {lds['estimator']} not implemented!")
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
         
         # add in meld score
         scores[-1] = np.append(scores[-1],meld_score)
@@ -290,6 +309,14 @@ if __name__ == '__main__':
                         help='Calculate the weights for the LDSC')
     parser.add_argument('--chrom', dest='chrom', type=int)
     parser.add_argument('--win', dest='win', type=int)
+<<<<<<< HEAD
+    parser.add_argument('--alpha',dest = 'alpha',type = float)
+    parser.add_argument('--plink_dir',dest = 'plink_dir',type = str)
+    parser.add_argument('--out',dest = 'out',type = str)
+    parser.add_argument('--filter_list',dest = 'list',type = str)
+    parser.add_argument('--annotations',dest = 'annotations',type = str)
+=======
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
 
     args = parser.parse_args()
     chrom = args.chrom
@@ -303,6 +330,10 @@ if __name__ == '__main__':
 
     #ld_estimator = ['D2', 'R2']  #, 'NR2']
     ld_estimator = ['R2']  #, 'NR2']
+<<<<<<< HEAD
+    # print(args.alpha)
+    alpha = [args.alpha]
+=======
     #alpha = [0., .25, .5, .75, 1.]
     #alpha = [0.45, 0.24, 0.19, 0.43, 0.39,\
     #         0.38, 0.25, 0.42, 0.52, 0.19,\
@@ -313,6 +344,7 @@ if __name__ == '__main__':
              0.38, 0.25, 0.42, 0.52,\
              0.40, 0.37, 0.09, 0.13,\
              0.11, 0.07, 0.20, 0.41]
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
 
     scores_to_compute = {
         lde + '_' + str(a): {
@@ -339,10 +371,19 @@ if __name__ == '__main__':
     #annotations = "./data/ld_scores/1000G_Phase3_" + population + "_baselineLD_v2.2_ldscores/baselineLD.%d.annot.gz"
 
     #Biobank japan using EAS population
+<<<<<<< HEAD
+    # plink_dir = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/plinkfiles/EAS.final.chr%s"
+    plink_dir = args.plink_dir + '%s'
+    # w_snp_filter = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/list.txt"
+    w_snp_filter = args.list
+    # annotations = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/EAS_annotations/1000G.EAS.%d.annot"
+    annotations = args.annotations + '.%d.annot'
+=======
     plink_dir = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/plinkfiles/EAS.final.chr%s"
     w_snp_filter = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/list.txt"
     annotations = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/EAS_annotations/1000G.EAS.%d.annot"
 
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
     # 1kg full dataset
     # plink_dir = "/users/gdarnel1/data/gdarnel1/1kg_data/1000G_EUR_Phase3_plink/1000G.EUR.QC.%s"
     # w_snp_filter = "/users/gdarnel1/data/gdarnel1/1kg_data/hapmap3_snps/list.txt"
@@ -360,7 +401,12 @@ if __name__ == '__main__':
     # for meld:
     #output_dir = "/users/gdarnel1/data/gdarnel1/1kg_data/ldscores%s/1000G_Phase3_%s_mldscores/MELD_" % (['', '_weights'][weights], population)
     # output_dir = "/users/gdarnel1/data/gdarnel1/1kg_data/ldscores%s/1000G_Phase3_%s_mldscores/Full_MELD_" % (['', '_weights'][weights], population)
+<<<<<<< HEAD
+    # output_dir = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/EAS_annotations/outputs/"
+    output_dir = args.out
+=======
     output_dir = "/users/ssmith40/data/ukbiobank_jun17/ssmith/ongoing/meld/biobankjapan/EAS_1000G/EAS_annotations/outputs/"
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
     output_dirs = [os.path.join(output_dir, sn) for sn in scores_to_compute]
     [makedir(od) for od in output_dirs]
 
@@ -412,7 +458,11 @@ if __name__ == '__main__':
 
         # -------------------------------------------------
 
+<<<<<<< HEAD
+        # print(M, N)
+=======
         print(M, N)
+>>>>>>> fb81e9ae3b27ac48cbf5a2ee1e940d56330c8771
         print("Computing LD Scores...")
 
         if not weights:

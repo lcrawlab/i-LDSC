@@ -1,0 +1,41 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 sumstats/eas.HBA1C.sumstats.gz \
+--ref-ld-chr Full_MELD_/R2_0.37/MELD.win_100.@ \
+--out EAS.HBA1C \
+--w-ld-chr Full_LD_/R2_0.37/LD.win_100.@ \
+--print-coefficients  
+
+Beginning analysis at Tue Jun 14 13:42:48 2022
+Reading summary statistics from sumstats/eas.HBA1C.sumstats.gz ...
+Read summary statistics for 4924561 SNPs.
+Reading reference panel LD Score from Full_MELD_/R2_0.37/MELD.win_100.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1164666 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from Full_LD_/R2_0.37/LD.win_100.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1164666 SNPs.
+After merging with reference panel LD, 408009 SNPs remain.
+After merging with regression SNP LD, 408009 SNPs remain.
+Removed 4 SNPs with chi^2 > 80 (408005 SNPs remain)
+Total Observed scale h2: 0.0595 (0.0152)
+Categories: l2R2_0.37_0 meldR2_0.37_0
+Observed scale h2: 0.0587 0.0007
+Observed scale h2 SE: 0.012  0.0075
+Proportion of SNPs: 0.5 0.5
+Proportion of h2g: 0.988 0.012
+Enrichment: 1.9761 0.0239
+Coefficients: 2.4338e-07 2.9492e-09
+Coefficient SE: 4.9713e-08 3.1200e-08
+Lambda GC: 1.0741
+Mean Chi^2: 1.0937
+Intercept: 1.056 (0.0094)
+Ratio: 0.5982 (0.1007)
+Analysis finished at Tue Jun 14 13:43:02 2022
+Total time elapsed: 14.55s
