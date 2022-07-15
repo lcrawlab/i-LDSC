@@ -1,0 +1,41 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 Platelet_norm.sumstats.gz \
+--ref-ld-chr /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_MELD_/R2_0.19/MELD.win_100.@ \
+--out Platelet_norm_win100_alpha_full_meld \
+--w-ld-chr /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_LD_/R2_0.19/LD.@ \
+--print-coefficients  
+
+Beginning analysis at Thu May 12 20:48:01 2022
+Reading summary statistics from Platelet_norm.sumstats.gz ...
+Read summary statistics for 1874559 SNPs.
+Reading reference panel LD Score from /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_MELD_/R2_0.19/MELD.win_100.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 9997231 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_LD_/R2_0.19/LD.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 9997231 SNPs.
+After merging with reference panel LD, 1854569 SNPs remain.
+After merging with regression SNP LD, 1854569 SNPs remain.
+Removed 328 SNPs with chi^2 > 349.411 (1854241 SNPs remain)
+Total Observed scale h2: 0.2115 (0.0189)
+Categories: LDR2_0.19_0 MLR2_0.19_0
+Observed scale h2: 0.2449 -0.0334
+Observed scale h2 SE: 0.0183 0.0097
+Proportion of SNPs: 0.5 0.5
+Proportion of h2g: 1.1579 -0.1579
+Enrichment: 2.3157 -0.3157
+Coefficients: 1.0382e-07 -1.4155e-08
+Coefficient SE: 7.7688e-09 4.1146e-09
+Lambda GC: 1.5696
+Mean Chi^2: 2.5556
+Intercept: 1.244 (0.0287)
+Ratio: 0.1569 (0.0185)
+Analysis finished at Thu May 12 20:49:16 2022
+Total time elapsed: 1.0m:14.33s

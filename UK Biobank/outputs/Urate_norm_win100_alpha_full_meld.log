@@ -1,0 +1,41 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 Urate_norm.sumstats.gz \
+--ref-ld-chr /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_MELD_/R2_0.45/MELD.win_100.@ \
+--out Urate_norm_win100_alpha_full_meld \
+--w-ld-chr /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_LD_/R2_0.45/LD.@ \
+--print-coefficients  
+
+Beginning analysis at Thu May 12 20:48:09 2022
+Reading summary statistics from Urate_norm.sumstats.gz ...
+Read summary statistics for 1874429 SNPs.
+Reading reference panel LD Score from /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_MELD_/R2_0.45/MELD.win_100.[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 9997231 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /users/gdarnel1/data/gdarnel1/1kg_data/ldscores/1000G_Phase3_EUR_mldscores/Full_LD_/R2_0.45/LD.[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 9997231 SNPs.
+After merging with reference panel LD, 1854439 SNPs remain.
+After merging with regression SNP LD, 1854439 SNPs remain.
+Removed 367 SNPs with chi^2 > 349.411 (1854072 SNPs remain)
+Total Observed scale h2: 0.1126 (0.0186)
+Categories: LDR2_0.45_0 MLR2_0.45_0
+Observed scale h2: 0.1522 -0.0397
+Observed scale h2 SE: 0.0143 0.0097
+Proportion of SNPs: 0.5 0.5
+Proportion of h2g: 1.3527 -0.3527
+Enrichment: 2.7054 -0.7054
+Coefficients: 4.8626e-08 -1.2678e-08
+Coefficient SE: 4.5672e-09 3.1038e-09
+Lambda GC: 1.5144
+Mean Chi^2: 2.0537
+Intercept: 1.1499 (0.015)
+Ratio: 0.1423 (0.0143)
+Analysis finished at Thu May 12 20:49:23 2022
+Total time elapsed: 1.0m:14.54s
