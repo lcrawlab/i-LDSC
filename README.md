@@ -37,7 +37,7 @@ Once those files are generated, the following command can be used to generate ME
 
 ## Analyzing GWA Summary Statistics with MELD
 
-MELD requires the same dependencies as the original LD score framework (LDSC) [Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211). Instructions and software requirements for LDSC can be found at https://github.com/bulik/ldsc. 
+MELD requires the same dependencies as the original LD score framework (LDSC) ([(Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211)). Instructions and software requirements for LDSC can be found at https://github.com/bulik/ldsc. 
 
 Once the appropriate packages are intalled in the environment, the following command will initiate an analysis using the MELD model:
 
