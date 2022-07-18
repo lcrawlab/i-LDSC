@@ -37,11 +37,11 @@ We provide example code and a toy dataset which illustrate how to use MELD and c
 For instance, in order to analyze Triglyceride levels using the Biobank Japan Data, run:
 
 ```python 
-python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz\n
+python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz
 --ref-ld-chr EAS_1000G/Full_MELD_/R2_0.07/MELD.win_100.@
 --w-ld-chr EAS_1000G/Full_LD_/R2_0.07/LD.win_100.@
 --out EAS.Triglyceride
- --print-coefficients
+--print-coefficients
  ```
 
 This will write out an EAS.Triglyceride.log file that contains MELD estimates using an alpha value of 0.07 and a MELD window of 100 SNPs.
