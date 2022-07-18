@@ -14,6 +14,14 @@ The misestimation of test statistics in genome-wide association (GWA) studies du
 
 `ldscore` contains the necessary supplemnental scripts to perform the MELD analysis and should always be located in the directory where MELD software is being initiated.
 
+`compute_ld_1000G.py` is the python script used to calculate MELD scores from plink formatted genetic data. See description of use below.
+
+`meld.py` is the command line tool for launching MELD analysis. See description of use below.
+
+`meld.score.requirements.txt` contains the python packages necessary for an environment to perform calculation of MELD scores with the `compute_ld_1000G.py` script.
+
+`munge_sumstats.py` is the python script originally developed by Bulik-Sullivan et al. to format GWAS summary statistics for analysis. 
+
 ## Software Installation Requirements
 
 We recommend creating an anaconda environment for running MELD. Detailed instructions for setting up conda environments can be found here: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html.
