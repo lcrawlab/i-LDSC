@@ -20,7 +20,7 @@ The misestimation of test statistics in genome-wide association (GWA) studies du
 
 `meld.score.requirements.txt` contains the python packages necessary for an environment to perform calculation of MELD scores with the `compute_ld_1000G.py` script.
 
-`munge_sumstats.py` is the python script originally developed by Bulik-Sullivan et al. to format GWAS summary statistics for analysis. 
+`munge_sumstats.py` is the python script originally developed by [Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211) to format GWA summary statistics for analysis. 
 
 ## Software Installation Requirements
 
