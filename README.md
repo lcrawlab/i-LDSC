@@ -36,7 +36,7 @@ Once the appropriate packages are intalled in the environment the following comm
 We provide example code and a toy dataset which illustrate how to use MELD and conduct downstream analyses.
 For instance, in order to analyze Triglyceride levels using the Biobank Japan Data, run:
 
-```python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz```
+```python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz```\n
     ```--ref-ld-chr EAS_1000G/Full_MELD_/R2_0.07/MELD.win_100.@```
     ```--w-ld-chr EAS_1000G/Full_LD_/R2_0.07/LD.win_100.@```
     ```--out EAS.Triglyceride ```
