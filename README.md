@@ -41,7 +41,13 @@ MELD requires the same dependencies as the original LD score framework (LDSC) (B
 
 Once the appropriate packages are intalled in the environment, the following command will initiate an analysis using the MELD model:
 
-```python ldsc.py --h2 $path_to_sumstats$ --ref-ld-chr $path_to_Full_MELD_directory/$ --w-ld-chr $path_to_Full_LD_directory/$ --out $outfile_prefix --print-coefficients```
+```python 
+ldsc.py --h2 $path_to_sumstats$ 
+--ref-ld-chr $path_to_Full_MELD_directory/$ 
+--w-ld-chr $path_to_Full_LD_directory/$ 
+--out $outfile_prefix 
+--print-coefficients
+```
 
  ## Tutorials and Examples
  
