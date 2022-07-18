@@ -35,18 +35,18 @@ Once those files are generated, the following command can be used to generate ME
 
 ```python compute_ld_1000G.py --chrom 22 --win 100```
 
-##MELD Analysis
+## Analyzing GWA Summary Statistics with MELD
 
-MELD requires the same dependencies as the original LD score framework. Instructions for installation and requirements can be found at https://github.com/bulik/ldsc. 
+MELD requires the same dependencies as the original LD score framework (LDSC) (Bulik-Sullivan et al. (2015))[https://www.nature.com/articles/ng.3211]. Instructions and software requirements for LDSC can be found at https://github.com/bulik/ldsc. 
 
-Once the appropriate packages are intalled in the environment the following command will initiate MELD analyses.
+Once the appropriate packages are intalled in the environment, the following command will initiate an analysis using the MELD model:
 
 ```python ldsc.py --h2 $path_to_sumstats$ --ref-ld-chr $path_to_Full_MELD_directory/$ --w-ld-chr $path_to_Full_LD_directory/$ --out $outfile_prefix --print-coefficients```
 
  ## Tutorials and Examples
  
-We provide example code and a toy dataset which illustrate how to use MELD and conduct downstream analyses.
-For instance, in order to analyze Triglyceride levels using the Biobank Japan Data, run:
+Here, we briefly provide example code which illustrates how to use MELD and conduct downstream analyses.
+For instance, in order to analyze triglyceride levels using GWA summary statistics from Biobank Japan, one would use the command:
 
 ```python 
 python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz
@@ -56,7 +56,8 @@ python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz
 --print-coefficients
  ```
 
-This will write out an EAS.Triglyceride.log file that contains MELD estimates using an alpha value of 0.07 and a MELD window of 100 SNPs.
+This command will write out an EAS.Triglyceride.log file that contains MELD estimates using an alpha value of 0.07 and a generating window of 100 SNPs for the marginal epistatic LD scores.
+
  ## RELEVANT CITATIONS
 
 G. Darnell*, S.P. Smith*, D. Udwin, S. Ramachandran, and L. Crawford. Partitioning marginal epistasis distinguishes nonlinear effects from polygenicity in GWA summary statistics. _biorxiv_.
