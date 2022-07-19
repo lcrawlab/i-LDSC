@@ -43,7 +43,7 @@ Once those files are generated, commands similar to the following can be used to
 
 ```python compute_ld_1000G.py --chrom 22 --win 100```
 
-If one would like to use the MELD framework using their own GWA summary statistics, we would highly recommend that they follow the `.sumstats` file format that the LDSC software uses (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)).
+If one would like to use the MELD framework using their own GWA summary statistics, we would highly recommend that they convert their data to the `.sumstats` file format that the LDSC software recognizes (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)).
 
 ## Analyzing GWA Summary Statistics with MELD
 
