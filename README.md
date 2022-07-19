@@ -39,9 +39,11 @@ If you do not want to use the provided MELD scores for the EUR and EAS populatio
 * Plink binary format files (bed, bim, fam) partitioned by chromosome for efficient calculation;
 * A list.txt file with each SNP in the bim files listed on its own line.
 
-Once those files are generated, the following command can be used to generate MELD scores:
+Once those files are generated, commands similar to the following can be used to generate MELD scores:
 
 ```python compute_ld_1000G.py --chrom 22 --win 100```
+
+If one would like to use the MELD framework using their own GWA summary statistics, we would highly recommend that they follow the `.sumstats` file format that the LDSC software uses (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)]).
 
 ## Analyzing GWA Summary Statistics with MELD
 
