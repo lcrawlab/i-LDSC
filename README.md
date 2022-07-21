@@ -71,7 +71,7 @@ If one would like to use the MELD framework using their own GWA summary statisti
 
 MELD requires the same dependencies as the original LD score framework (LDSC) ([Bulik-Sullivan et al. 2015](https://www.nature.com/articles/ng.3211)). Instructions and software requirements for LDSC can be found at https://github.com/bulik/ldsc. 
 
-NOTE: MELD analyses are run in python 2 and the computation of MELD scores are run in python 3. You must make a new environment to obtain MELD estimates. 
+_NOTE: MELD analyses are run in python 2, while the computation of the MELD scores is done in python 3. Thus, a new environment is needed to obtain MELD estimates._
 
 Once the appropriate packages are intalled in the environment, the following command will initiate an analysis using the MELD model:
 
