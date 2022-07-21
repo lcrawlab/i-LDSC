@@ -12,7 +12,7 @@ The misestimation of test statistics in genome-wide association (GWA) studies du
 
 `EUR_1000G` has the same type of score files as the `EAS_1000G` directory but computed from the EUR superpopulation of the 1000 Genomes Project.
 
-`ldscore` contains the necessary supplemnental scripts to perform the MELD analysis and should always be located in the directory where MELD software is being initiated.
+`ldscore` contains the necessary supplemental scripts to perform the MELD analysis and should always be located in the directory where MELD software is being initiated.
 
 `compute_ld_1000G.py` is the python script used to calculate MELD scores from plink formatted genetic data. See description of use below.
 
