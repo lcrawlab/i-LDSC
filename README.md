@@ -4,9 +4,9 @@ The misestimation of test statistics in genome-wide association (GWA) studies du
 
 ## Directory Contents
 
-`BiobankJapan` contains subdirectories entitlted `sumstats` and `outputs` which, respectively, contain GWA summary statistics and results for the Biobank Japan analyses performed in the paper. 
+`BioBankJapan` contains subdirectories entitlted `sumstats` and `outputs` which, respectively, contain GWA summary statistics and results for the BioBank Japan analyses performed in the paper. 
 
-`UKBiobank` has the same type of files as the `BiobankJapan` directory but for the UK Biobank analyses performed in the paper. 
+`UKBiobank` has the same type of files as the `BioBankJapan` directory but for the UK Biobank analyses performed in the paper. 
 
 `EAS_1000G` contains files of both the LD scores and the marginal epistatic LD scores calculated using the EAS superpopulation from the 1000 Genomes Project. The scores are located in the `Full_LD_` and `Full_MELD_` subdirectories, respectively.
 
@@ -21,6 +21,26 @@ The misestimation of test statistics in genome-wide association (GWA) studies du
 `meld.score.requirements.txt` contains the python packages necessary for an environment to perform calculation of MELD scores with the `compute_ld_1000G.py` script.
 
 `munge_sumstats.py` is the python script originally developed by [Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211) to format GWA summary statistics for analysis. 
+
+## Partial Cloning of the Repo
+
+Due to the size of the data and summary statistics, we recommend that users consider [partially cloning](https://docs.gitlab.com/ee/topics/git/partial_clone.html) the repo to reduce memory for their working copy and downloading only the subdirectories that are relevant for their purposes. To do this, one would first clone the repo without including any files:
+
+```git clone --filter=blob:none --sparse https://github.com/lcrawlab/MELD.git Test```
+
+Then after changing the directory `cd MELD`, one could copy over all of the python scripts needed to run analyses using the command line:
+
+```git sparse-checkout set --no-cone \*.py \*requirements.txt \*.md```
+
+If one wanted to extract the UK Biobank or BioBank Japan results and corresponding summary statistics, one would use (as an example):
+
+```git sparse-checkout set "UK Biobank"```
+
+If one wanted to extract the MELD and LDSC scores from the EUR and EAS reference panels, one would use (as an example):
+
+```git sparse-checkout set --no-cone \*.ldscore.gz```
+
+For more information on using the partial clone function, please see more details [here](https://docs.gitlab.com/ee/topics/git/partial_clone.html).
 
 ## Software Installation Requirements
 
@@ -62,10 +82,10 @@ ldsc.py --h2 $path_to_sumstats$
  ## Tutorials and Examples
  
 Here, we briefly provide example code which illustrates how to use MELD and conduct downstream analyses.
-For instance, in order to analyze triglyceride levels using GWA summary statistics from Biobank Japan, one would use the command:
+For instance, in order to analyze triglyceride levels using GWA summary statistics from BioBank Japan, one would use the command:
 
 ```python 
-python ldsc.py --h2 BiobankJapan/sumstats/bbj.Triglyceride.sumstats.gz
+python ldsc.py --h2 BioBankJapan/sumstats/bbj.Triglyceride.sumstats.gz
 --ref-ld-chr EAS_1000G/Full_MELD_/R2_0.07/MELD.win_100.@
 --w-ld-chr EAS_1000G/Full_LD_/R2_0.07/LD.win_100.@
 --out EAS.Triglyceride
