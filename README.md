@@ -52,7 +52,7 @@ Calculation of marginal epistatic LD scores requires a working version of pip an
 
 To install the necessary python packages, navigate to the woking directory and use the command:
 
-```pip install -r meld.requirements.txt```
+```pip install -r meld.score.requirements.txt```
 
 If you do not want to use the provided MELD scores for the EUR and EAS populations from the 1000 Genomes database, you will need the following files from your own dataset:
 
@@ -69,10 +69,12 @@ If one would like to use the MELD framework using their own GWA summary statisti
 
 MELD requires the same dependencies as the original LD score framework (LDSC) ([Bulik-Sullivan et al. 2015](https://www.nature.com/articles/ng.3211)). Instructions and software requirements for LDSC can be found at https://github.com/bulik/ldsc. 
 
+NOTE: MELD analyses are run in python 2 and the computation of MELD scores are run in python 3. You must make a new environment to obtain MELD estimates. 
+
 Once the appropriate packages are intalled in the environment, the following command will initiate an analysis using the MELD model:
 
 ```python 
-ldsc.py --h2 $path_to_sumstats$ 
+meld.py --h2 $path_to_sumstats$ 
 --ref-ld-chr $path_to_Full_MELD_directory/$ 
 --w-ld-chr $path_to_Full_LD_directory/$ 
 --out $outfile_prefix 
