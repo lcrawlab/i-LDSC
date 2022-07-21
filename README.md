@@ -34,7 +34,7 @@ Then after changing the directory `cd MELD`, one could copy over all of the pyth
 
 If one wanted to extract the UK Biobank or BioBank Japan results and corresponding summary statistics, one would use (as an example):
 
-```git sparse-checkout set "UK Biobank"```
+```git sparse-checkout set UKBiobank```
 
 If one wanted to extract the MELD and LDSC scores from the EUR and EAS reference panels, one would use (as an example):
 
