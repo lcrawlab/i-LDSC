@@ -22,7 +22,7 @@ The misestimation of test statistics in genome-wide association (GWA) studies du
 
 `munge_sumstats.py` is the python script originally developed by [Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211) to format GWA summary statistics for analysis. 
 
-## Partial Cloning of the Repo
+## Recommendation: Partially Clone the Repo
 
 Due to the size of the data and summary statistics, we recommend that users consider [partially cloning](https://docs.gitlab.com/ee/topics/git/partial_clone.html) the repo to reduce memory for their working copy and downloading only the subdirectories that are relevant for their purposes. To do this, one would first clone the repo without including any files:
 
