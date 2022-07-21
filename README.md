@@ -61,7 +61,9 @@ If you do not want to use the provided MELD scores for the EUR and EAS populatio
 
 Once those files are generated, commands similar to the following can be used to generate MELD scores:
 
-```python compute_ld_1000G.py --chrom 22 --win 100```
+```python compute_ld_1000G.py --plink_dir $path_to_plink_files/plink_file_prefix$ EAS_1000G/--chrom 22 --win 100```
+
+Note that due to file size we have not included the 1000G plink files here. They are available upon request. 
 
 If one would like to use the MELD framework using their own GWA summary statistics, we would highly recommend that they convert their data to the `.sumstats` file format that the LDSC software recognizes (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)).
 
