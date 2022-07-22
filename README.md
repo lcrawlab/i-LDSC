@@ -100,7 +100,7 @@ This command will write out an EAS.Triglyceride.log file that contains MELD esti
 
  ## RELEVANT CITATIONS
 
-G. Darnell*, S.P. Smith*, D. Udwin, S. Ramachandran, and L. Crawford. Partitioning marginal epistasis distinguishes nonlinear effects from polygenicity in GWA summary statistics. _biorxiv_.
+G. Darnell*, S.P. Smith*, D. Udwin, S. Ramachandran, and L. Crawford. Partitioning marginal epistasis distinguishes nonlinear effects from polygenicity in GWA summary statistics. _bioRxiv_. 2022.07.21.501001.
 
 ## QUESTIONS AND FEEDBACK
 For questions or concerns with the MELD software, please contact [Sam Smith](mailto:samuel_smith1@brown.edu) or [Lorin Crawford](mailto:lcrawford@microsoft.com).
