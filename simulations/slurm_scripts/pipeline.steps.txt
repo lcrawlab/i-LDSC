@@ -1,0 +1,9 @@
+##The scripts in this directory are used to generate the data for a number of simulations 
+
+dispatch_ldscsim_datagen.sh - generates seven different sets of simulations with a number of window sizes, alpha values, etc. 
+
+dispatch_GxE_datagen.sh - generates GxE architecture to test if the CASS score is sensitive to the type of architecture it is designed to capture
+
+dispatch_meld_pipeline_dist.sh - contains command to run gwas on all the simulations and then get ldsc estimates
+
+dispatch_figure_data_compilation.sh - contains command to compile the results from the simulations needed to generate figures and supplemental figures
