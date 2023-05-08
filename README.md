@@ -21,6 +21,8 @@ In addition to the files below, the empirical files used for our analysis of the
 
 `simulations` contains the python scripts necessary to generate the simulated data included in the manuscript, including: various alpha and window size parameters, GxE architecture under an amplification model, and GxAncestry architecture using PC loadings.
 
+`figures` contains both the main text and supplemental figures that are presented in the manuscript as well as the scripts and data necessary to reproduce them.
+
 ## Recommendation: Partially Clone the Repo
 
 Due to the size of the data and summary statistics, we recommend that users consider [partially cloning](https://docs.gitlab.com/ee/topics/git/partial_clone.html) the repo to reduce memory for their working copy and downloading only the subdirectories that are relevant for their purposes. To do this, one would first clone the repo without including any files:
