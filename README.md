@@ -3,20 +3,17 @@
 The misestimation of test statistics in genome-wide association (GWA) studies due to confounding such as cryptic relatedness, population stratification, and spurious non-zero genetic effects driven by linkage disequilibrium (LD) has been well characterized in the literature. This repository contains code for **iLDSC**: a software package to run **interaction-LD score regression**. iLDSC is an extended statistical framework which takes in GWA test statistics and accurately partitions true additive genetic variation from non-additive genetic variation that is explained by nonlinear statistical interactions.
 
 ## Directory Contents
+In addition to the files below, the empirical files used for our analysis of the UK Biobank and Biobank Japan can be downloaded from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/W6MA8J&faces-redirect=true. Please be aware that these files are quiet large and will take time to download completely. 
 
-`BioBankJapan` contains subdirectories entitlted `sumstats` and `outputs` which, respectively, contain GWA summary statistics and results for the BioBank Japan analyses performed in the paper. 
-
-`UKBiobank` has the same type of files as the `BioBankJapan` directory but for the UK Biobank analyses performed in the paper. 
-
-`EAS_1000G` contains files of both the LD scores and the marginal epistatic LD scores calculated using the EAS superpopulation from the 1000 Genomes Project. The scores are located in the `Full_LD_` and `Full_cis_` subdirectories, respectively.
+`1000G_EAS` contains cis-interaction scores calculated on the East Asian superpopulation of the 1000 genomes project phase 3. These scores are calculated across a range of alpha values, which account for the trait specific MAF-effect size relationship. 
 
 `EUR_1000G` has the same type of score files as the `EAS_1000G` directory but computed from the EUR superpopulation of the 1000 Genomes Project.
 
 `ldscore` contains the necessary supplemental scripts to perform i-LDSC analysis and should always be located in the directory where i-LDSC software is being initiated.
 
-`compute_ld_1000G.py` is the python script used to calculate cis-interaction scores from plink formatted genetic data. See description of use below.
+`compute_ld_cisinteractionscores.py` is the python script used to calculate cis-interaction scores from plink formatted genetic data. See description of use below.
 
-`ldsc.py` is the command line tool for launching iLDSC analysis. See description of use below.
+`ildsc.py` is the command line tool for launching iLDSC analysis. See description of use below.
 
 `ildsc.score.requirements.txt` contains the python packages necessary for an environment to perform calculation of cis-interaction scores with the `compute_ld_1000G.py` script.
 
@@ -32,9 +29,9 @@ Then after changing the directory `cd iLDSC`, one could copy over all of the pyt
 
 ```git sparse-checkout set --no-cone \*.py \*requirements.txt \*.md```
 
-If one wanted to extract the UK Biobank or BioBank Japan results and corresponding summary statistics, one would use (as an example):
+If one wanted to extract the cis-interaction score for the EAS superpopulation from the 1000 genomes phase 3 data, one would use (as an example):
 
-```git sparse-checkout set UKBiobank```
+```git sparse-checkout set 1000G_EAS```
 
 If one wanted to extract the cis-interaction and LD scores from the EUR and EAS reference panels, one would use (as an example):
 
@@ -61,9 +58,9 @@ If you do not want to use the provided cis-interaction scores for the EUR and EA
 
 Once those files are generated, commands similar to the following can be used to generate cis-interaction scores:
 
-```python compute_ld_1000G.py --plink_dir $path_to_plink_files/plink_file_prefix$ EAS_1000G/ --chrom 22 --win 100```
+```python compute_ld_cisinteractionscores.py --plink_dir $path_to_plink_files/plink_file_prefix$ EAS_1000G/ --chrom 22 --win 100```
 
-Note that due to file size we have not included the 1000G plink files here. They are available upon request. 
+They are available upon request. 
 
 If one would like to use the i-LDSC framework using their own GWA summary statistics, we would highly recommend that they convert their data to the `.sumstats` file format that the LDSC software recognizes (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)).
 
@@ -76,7 +73,7 @@ _NOTE: i-LDSC analyses are run in python 2, while the computation of the cis-int
 Once the appropriate packages are intalled in the environment, the following command will initiate an analysis using the MELD model:
 
 ```python 
-ldsc.py --h2 $path_to_sumstats$ 
+ildsc.py --h2 $path_to_sumstats$ 
 --ref-ld-chr $path_to_cisinteractionscore_directory/$ 
 --w-ld-chr $path_to_weight_directory/$ 
 --out $outfile_prefix 
@@ -90,7 +87,7 @@ Here, we briefly provide example code which illustrates how to use i-LDSC and co
 For instance, in order to analyze triglyceride levels using GWA summary statistics from BioBank Japan, one would use the command:
 
 ```python 
-python ldsc.py --h2 sumstats/Height_norm.hapmap.1kg.sumstats.gz
+python ildsc.py --h2 sumstats/Height_norm.hapmap.1kg.sumstats.gz
 --ref-ld-chr cisinteraction_scores/
 --w-ld-chr weight_hm3_no_hla/
 --out UKB.Triglyceride
@@ -101,9 +98,9 @@ This command will write out an UKB.Triglyceride.log file that contains i-LDSC es
 
  ## RELEVANT CITATIONS
 
-G. Darnell*, S.P. Smith*, D. Udwin, S. Ramachandran, and L. Crawford. Partitioning marginal epistasis distinguishes nonlinear effects from polygenicity in GWA summary statistics. _bioRxiv_. 2022.07.21.501001.
+S.P. Smith*, G. Darnell*, D. Udwin, S. Ramachandran, and L. Crawford. Partitioning marginal epistasis distinguishes nonlinear effects from polygenicity in GWA summary statistics. _bioRxiv_. 2022.07.21.501001.
 
 ## QUESTIONS AND FEEDBACK
-For questions or concerns with the i-LDSC software, please contact [Sam Smith](mailto:samuel_smith1@brown.edu) or [Lorin Crawford](mailto:lcrawford@microsoft.com).
+For questions or concerns with the i-LDSC software, please contact [Sam Smith](mailto:samuel.smith@utexas.edu) or [Lorin Crawford](mailto:lcrawford@microsoft.com).
 
 We welcome and appreciate any feedback you may have with our software and/or instructions. 
