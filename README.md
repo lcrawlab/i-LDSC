@@ -1,9 +1,9 @@
-# Interaction LD Score (i-LDSC) Regression
+# Interaction-LD Score (i-LDSC) Regression
 
-LD score regression (LDSC) was developed to distinguish true genetic signal from confounding biases such as cryptic relatedness and population stratification. The key concept underlying the LDSC framework is that there is a positive linear relationship between test statistics derived from genome-wide association (GWA) studies and linkage disequilibrium (LD) when complex traits are generated under the infinitesimal model --- that is, when all genetic variants equally contribute to phenotypic variation and their effects are uniformly distributed along the genome. This repository contains code for **interaction-LD score (i-LDSC) regression**: an extended framework which aims to recover missing heritability from GWA summary statistics by incorporating an additional score that measures the amount of non-additive genetic variation that is tagged by each variant in the data. After model fitting, these scores produce nonzero regression coefficients when the distribution of genetic effects is non-uniform due to a subset of variants being involved in interactions that also contribute to trait architecture.
+LD score regression (LDSC) was developed to distinguish true genetic signal from confounding biases such as cryptic relatedness and population stratification. The key concept underlying the LDSC framework is that there is a positive linear relationship between test statistics derived from genome-wide association studies (GWAS) and linkage disequilibrium (LD) when complex traits are generated under the infinitesimal model --- that is, when all genetic variants equally contribute to phenotypic variation and their effects are uniformly distributed along the genome. This repository contains code for **interaction-LD score (i-LDSC) regression**: an extended framework which aims to recover missing heritability from GWAS summary statistics by incorporating an additional score that measures the amount of non-additive genetic variation that is tagged by each variant in the data. After model fitting, these scores produce nonzero regression coefficients when the distribution of genetic effects is non-uniform due to a subset of variants being involved in interactions that also contribute to trait architecture.
 
 ## Directory Contents
-In addition to the files below, files of LD scores, cis-interaction LD scores, and GWA summary statistics used for our analysis of the UK Biobank and BioBank Japan can be downloaded from the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/W6MA8J&faces-redirect=true). Please be aware that these files are quiet large and will take time to download completely. 
+In addition to the files below, files of LD scores, cis-interaction LD scores, and GWAS summary statistics used for our analysis of the UK Biobank and BioBank Japan can be downloaded from the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/W6MA8J&faces-redirect=true). Please be aware that these files are quiet large and will take time to download completely. 
 
 `1000G_EAS` contains cis-interaction LD scores calculated on the East Asian (EAS) superpopulation of the 1000 Genomes Project phase 3. These scores are calculated across a range of alpha values, which account for the trait specific MAF-effect size relationship. 
 
@@ -17,7 +17,7 @@ In addition to the files below, files of LD scores, cis-interaction LD scores, a
 
 `ildsc.score.requirements.txt` contains the python packages necessary for an environment to perform calculation of cis-interaction LD scores with the `compute_ld_1000G.py` script.
 
-`munge_sumstats.py` is the python script originally developed by [Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211) to format GWA summary statistics for analysis. 
+`munge_sumstats.py` is the python script originally developed by [Bulik-Sullivan et al. (2015)](https://www.nature.com/articles/ng.3211) to format GWAS summary statistics for analysis. 
 
 `simulations` contains the python scripts necessary to generate the simulated data included in the manuscript, including: various alpha and window size parameters, GxE architecture under an amplification model, and GxAncestry architecture using principal component (PC) loadings.
 
@@ -66,9 +66,9 @@ Once those files are generated, commands similar to the following can be used to
 
 They are available upon request. 
 
-If one would like to use the i-LDSC framework using their own GWA summary statistics, we would highly recommend that they convert their data to the `.sumstats` file format that the LDSC software recognizes (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)).
+If one would like to use the i-LDSC framework using their own GWAS summary statistics, we would highly recommend that they convert their data to the `.sumstats` file format that the LDSC software recognizes (see instructions [here](https://github.com/bulik/ldsc/wiki/Heritability-and-Genetic-Correlation#reformatting-summary-statistics)).
 
-## Analyzing GWA Summary Statistics with i-LDSC
+## Analyzing GWAS Summary Statistics with i-LDSC
 
 i-LDSC requires the same dependencies as the original LD score regression framework (LDSC) ([Bulik-Sullivan et al. 2015](https://www.nature.com/articles/ng.3211)). Instructions and software requirements for LDSC can be found at https://github.com/bulik/ldsc. 
 
@@ -88,7 +88,7 @@ ildsc.py --h2 $path_to_sumstats$
  ## Tutorials and Examples
  
 Here, we briefly provide example code which illustrates how to use i-LDSC and conduct downstream analyses.
-For instance, in order to analyze triglyceride levels using GWA summary statistics from BioBank Japan, one would use the command:
+For instance, in order to analyze triglyceride levels using GWAS summary statistics from BioBank Japan, one would use the command:
 
 ```python 
 python ildsc.py --h2 sumstats/Height_norm.hapmap.1kg.sumstats.gz
