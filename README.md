@@ -98,7 +98,7 @@ python ildsc.py --h2 sumstats/Height_norm.hapmap.1kg.sumstats.gz
 --print-coefficients
  ```
 
-This command will write out an UKB.Triglyceride.log file that contains i-LDSC estimates using an alpha value of 0.07 and a generating window of 100 SNPs for the marginal epistatic LD scores.
+This command will write out an UKB.Triglyceride.log file that contains i-LDSC estimates using an alpha value of 0.07 and a generating window of 100 SNPs for the cis-interaction LD scores.
 
  ## RELEVANT CITATIONS
 
