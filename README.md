@@ -102,7 +102,7 @@ This command will write out an UKB.Triglyceride.log file that contains i-LDSC es
 
  ## RELEVANT CITATIONS
 
-S.P. Smith*, G. Darnell*, D. Udwin, A. Harpak, S. Ramachandran, and L. Crawford. Accounting for statistical non-additive interactions enables the recovery of missing heritability from GWAS summary statistics. _bioRxiv_. 2022.07.21.501001.
+S.P. Smith*, G. Darnell*, D. Udwin, J. Stamp, A. Harpak, S. Ramachandran, and L. Crawford. Discovering non-additive heritability using additive GWAS summary statistics. _eLife_. In Press.
 
 ## QUESTIONS AND FEEDBACK
 For questions or concerns with the i-LDSC software, please contact [Sam Smith](mailto:samuel.smith@utexas.edu) or [Lorin Crawford](mailto:lcrawford@microsoft.com).
