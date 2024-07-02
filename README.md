@@ -1,5 +1,7 @@
 # Interaction-LD Score (i-LDSC) Regression
 
+[![DOI](https://badgen.net/badge/DOI/10.7554%2FeLife.90459/red)](https://elifesciences.org/articles/90459) [![DOI](https://badgen.net/badge/DOI/10.7910%2FDVN%2FW6MA8J/)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/W6MA8J&faces-redirect=true) 
+
 LD score regression (LDSC) was developed to distinguish true genetic signal from confounding biases such as cryptic relatedness and population stratification. The key concept underlying the LDSC framework is that there is a positive linear relationship between test statistics derived from genome-wide association studies (GWAS) and linkage disequilibrium (LD) when complex traits are generated under the infinitesimal model --- that is, when all genetic variants equally contribute to phenotypic variation and their effects are uniformly distributed along the genome. This repository contains code for **interaction-LD score (i-LDSC) regression**: an extended framework which aims to recover missing heritability from GWAS summary statistics by incorporating an additional score that measures the amount of non-additive genetic variation that is tagged by each variant in the data. After model fitting, these scores produce nonzero regression coefficients when the distribution of genetic effects is non-uniform due to a subset of variants being involved in interactions that also contribute to trait architecture.
 
 ## Directory Contents
@@ -102,7 +104,7 @@ This command will write out an UKB.Triglyceride.log file that contains i-LDSC es
 
  ## RELEVANT CITATIONS
 
-S.P. Smith*, G. Darnell*, D. Udwin, J. Stamp, A. Harpak, S. Ramachandran, and L. Crawford. Discovering non-additive heritability using additive GWAS summary statistics. _eLife_. In Press.
+S.P. Smith*, G. Darnell*, D. Udwin, J. Stamp, A. Harpak, S. Ramachandran, and L. Crawford. Discovering non-additive heritability using additive GWAS summary statistics. _eLife_. **13**: e90459.
 
 ## QUESTIONS AND FEEDBACK
 For questions or concerns with the i-LDSC software, please contact [Sam Smith](mailto:samuel.smith@utexas.edu) or [Lorin Crawford](mailto:lcrawford@microsoft.com).
